@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 15, 25, 0.55),
+            rgba(3, 15, 25, 0.65)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* PAGE */
+
+.staff-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+
+/* CARD */
+
+.staff-card {
+    width: min(430px, 100%);
+
+    padding: 40px 35px;
+
+    background: rgba(10, 25, 35, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 0 25px rgba(255, 255, 255, 0.04);
+
+    text-align: center;
+
+    animation: cardAppear 0.8s ease;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 22px;
+}
+
+.logo-circle {
+    width: 72px;
+    height: 72px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 35px rgba(60, 210, 240, 0.5);
+
+    animation: pulse 3s infinite ease-in-out;
+}
+
+
+/* MEDICAL CROSS */
+
+.cross-horizontal {
+    position: absolute;
+
+    width: 30px;
+    height: 9px;
+
+    background: white;
+
+    border-radius: 3px;
+}
+
+.cross-vertical {
+    position: absolute;
+
+    width: 9px;
+    height: 30px;
+
+    background: white;
+
+    border-radius: 3px;
+}
+
+
+/* HEADING */
+
+h1 {
+    font-size: clamp(25px, 5vw, 32px);
+
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #7fffd4;
+}
+
+
+/* TEXT */
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUT */
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.input-group input:focus {
+    border-color: #7fffd4;
+
+    box-shadow:
+        0 0 15px rgba(127, 255, 212, 0.15);
+}
+
+
+/* PASSWORD */
+
+.password-box {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.password-box button {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+/* FORGOT PASSWORD */
+
+.forgot-container {
+    text-align: right;
+
+    margin-top: -8px;
+
+    margin-bottom: 24px;
+}
+
+.forgot-link {
+    color: #7fffd4;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #5ee7df,
+        #48c6ef
+    );
+
+    color: #06232b;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(72, 198, 239, 0.35);
+}
+
+
+/* MESSAGE */
+
+.login-message {
+    display: none;
+
+    margin-top: 16px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.login-message.show {
+    display: block;
+}
+
+.login-message.success {
+    color: #7fffd4;
+
+    background: rgba(40, 200, 130, 0.12);
+
+    border: 1px solid rgba(40, 220, 150, 0.35);
+}
+
+
+/* CHANGE ROLE */
+
+.role-text {
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.role-text a {
+    color: #7fffd4;
+
+    text-decoration: none;
+}
+
+.role-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@keyframes pulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .staff-page {
+        padding: 20px 15px;
+    }
+
+    .staff-card {
+        padding: 32px 22px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+}

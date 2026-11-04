@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart PHC - Doctor Login</title>
+
+    <link rel="stylesheet" href="doctor-login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-circle">
+                    <span class="cross-horizontal"></span>
+                    <span class="cross-vertical"></span>
+                </div>
+            </div>
+
+            <h1>
+                Welcome, Doctor
+                <span>SMART PHC</span>
+            </h1>
+
+            <p class="welcome-text">
+                Login to manage your patients and consultations.
+            </p>
+
+
+            <form>
+
+                <div class="input-group">
+                    <label>Email or Phone</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your email or phone"
+                        required
+                    >
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="doctorPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleDoctorPassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="forgot">
+                    <a href="forgot.html">
+                        Forgot Password?
+                    </a>
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <div id="doctorMessage" class="login-message"></div>
+
+
+            <p class="back-text">
+                ←
+                <a href="role-selection.html">
+                    Change Role
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="doctor-login.js"></script>
+
+</body>
+</html>

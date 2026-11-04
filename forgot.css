@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page */
+
+.forgot-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+/* Background */
+
+.forgot-page::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 20, 30, 0.48),
+            rgba(0, 50, 60, 0.45)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(3px);
+    transform: scale(1.01);
+
+    z-index: 0;
+}
+
+/* Card */
+
+.forgot-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, 450px);
+    padding: 40px 35px;
+
+    background: rgba(8, 35, 45, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(60, 210, 240, 0.12);
+
+    color: white;
+    text-align: center;
+
+    animation: cardAppear 1s ease forwards;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.logo-circle {
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 35px rgba(60, 210, 240, 0.45);
+
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Medical Cross */
+
+.cross-horizontal {
+    position: absolute;
+    width: 32px;
+    height: 9px;
+
+    background: white;
+    border-radius: 3px;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.cross-vertical {
+    position: absolute;
+    width: 9px;
+    height: 32px;
+
+    background: white;
+    border-radius: 3px;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Heading */
+
+h1 {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 12px;
+}
+
+h1 span {
+    color: #62dff5;
+}
+
+/* Text */
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* Input */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    border-color: #62dff5;
+
+    box-shadow:
+        0 0 0 3px rgba(98, 223, 245, 0.12),
+        0 0 15px rgba(98, 223, 245, 0.15);
+}
+
+/* Reset Button */
+
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #42c9e8,
+        #168fae
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(60, 210, 240, 0.35);
+}
+
+.reset-btn:active {
+    transform: scale(0.98);
+}
+
+/* Login Link */
+
+.login-text {
+    margin-top: 25px;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-text a {
+    color: #62dff5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 15px rgba(255, 255, 255, 0.5),
+            0 0 35px rgba(60, 210, 240, 0.4);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 25px rgba(255, 255, 255, 0.8),
+            0 0 55px rgba(60, 210, 240, 0.7);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .forgot-page {
+        padding: 20px 15px;
+    }
+
+    .forgot-card {
+        padding: 32px 24px;
+        border-radius: 22px;
+    }
+
+    .logo-circle {
+        width: 68px;
+        height: 68px;
+    }
+
+    .cross-horizontal {
+        width: 28px;
+        height: 8px;
+    }
+
+    .cross-vertical {
+        width: 8px;
+        height: 28px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page */
+
+.forgot-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+/* Background */
+
+.forgot-page::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 20, 30, 0.48),
+            rgba(0, 50, 60, 0.45)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(3px);
+    transform: scale(1.01);
+
+    z-index: 0;
+}
+
+/* Card */
+
+.forgot-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, 450px);
+    padding: 40px 35px;
+
+    background: rgba(8, 35, 45, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(60, 210, 240, 0.12);
+
+    color: white;
+    text-align: center;
+
+    animation: cardAppear 1s ease forwards;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.logo-circle {
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 35px rgba(60, 210, 240, 0.45);
+
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Medical Cross */
+
+.cross-horizontal {
+    position: absolute;
+    width: 32px;
+    height: 9px;
+
+    background: white;
+    border-radius: 3px;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.cross-vertical {
+    position: absolute;
+    width: 9px;
+    height: 32px;
+
+    background: white;
+    border-radius: 3px;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Heading */
+
+h1 {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 12px;
+}
+
+h1 span {
+    color: #62dff5;
+}
+
+/* Text */
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* Input */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    border-color: #62dff5;
+
+    box-shadow:
+        0 0 0 3px rgba(98, 223, 245, 0.12),
+        0 0 15px rgba(98, 223, 245, 0.15);
+}
+
+/* Reset Button */
+
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #42c9e8,
+        #168fae
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(60, 210, 240, 0.35);
+}
+
+.reset-btn:active {
+    transform: scale(0.98);
+}
+
+/* Login Link */
+
+.login-text {
+    margin-top: 25px;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-text a {
+    color: #62dff5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 15px rgba(255, 255, 255, 0.5),
+            0 0 35px rgba(60, 210, 240, 0.4);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 25px rgba(255, 255, 255, 0.8),
+            0 0 55px rgba(60, 210, 240, 0.7);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .forgot-page {
+        padding: 20px 15px;
+    }
+
+    .forgot-card {
+        padding: 32px 24px;
+        border-radius: 22px;
+    }
+
+    .logo-circle {
+        width: 68px;
+        height: 68px;
+    }
+
+    .cross-horizontal {
+        width: 28px;
+        height: 8px;
+    }
+
+    .cross-vertical {
+        width: 8px;
+        height: 28px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+.success-message {
+    display: none;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+
+    background: rgba(40, 200, 130, 0.12);
+    border: 1px solid rgba(40, 220, 150, 0.35);
+
+    color: #7fffd4;
+    font-size: 14px;
+    line-height: 1.5;
+
+    animation: messageAppear 0.4s ease;
+}
+
+.success-message.show {
+    display: block;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

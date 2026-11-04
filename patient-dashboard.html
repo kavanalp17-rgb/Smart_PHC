@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart PHC - Patient Dashboard</title>
+
+    <link rel="stylesheet" href="patient-dashboard.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">
+                <span class="cross-horizontal"></span>
+                <span class="cross-vertical"></span>
+            </div>
+
+            <span>SMART PHC</span>
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="nav-link active">
+                <span>🏠</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>👨‍⚕️</span>
+                Doctors
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🏥</span>
+                PHC Services
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>💊</span>
+                Medicines
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🔔</span>
+                Reminders
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>📋</span>
+                Health Records
+            </a>
+
+        </nav>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+
+            <div>
+                <p class="small-text">Patient Dashboard</p>
+
+                <h1>
+                    Welcome, <span id="patientName">Patient</span> 👋
+                </h1>
+            </div>
+
+
+            <div class="profile">
+
+                <div class="notification">
+                    🔔
+                    <span class="notification-dot"></span>
+                </div>
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Quick Overview -->
+        <section class="overview-grid">
+
+            <div class="overview-card">
+                <div class="card-icon">👨‍⚕️</div>
+
+                <div>
+                    <p>Doctors Available</p>
+                    <h2 id="doctorCount">3</h2>
+                </div>
+            </div>
+
+
+            <div class="overview-card">
+                <div class="card-icon">🏥</div>
+
+                <div>
+                    <p>PHC Services</p>
+                    <h2>6</h2>
+                </div>
+            </div>
+
+
+            <div class="overview-card">
+                <div class="card-icon">🔔</div>
+
+                <div>
+                    <p>Upcoming Reminders</p>
+                    <h2>2</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Doctor Availability -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">OBJECTIVE 01</p>
+
+                    <h2>Doctor Availability</h2>
+                </div>
+
+                <button class="view-btn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="doctor-grid">
+
+                <!-- Doctor 1 -->
+                <div class="doctor-card">
+
+                    <div class="doctor-info">
+
+                        <div class="doctor-avatar">
+                            👨‍⚕️
+                        </div>
+
+                        <div>
+                            <h3>Dr. Anil Kumar</h3>
+
+                            <p>
+                                General Physician
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <span class="status available">
+                            <span></span>
+                            Available
+                        </span>
+
+                        <span class="time">
+                            10:00 AM - 2:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card">
+
+                    <div class="doctor-info">
+
+                        <div class="doctor-avatar">
+                            👩‍⚕️
+                        </div>
+
+                        <div>
+                            <h3>Dr. Priya Sharma</h3>
+
+                            <p>
+                                Pediatrician
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <span class="status busy">
+                            <span></span>
+                            Busy
+                        </span>
+
+                        <span class="time">
+                            2:00 PM - 5:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Doctor 3 -->
+                <div class="doctor-card">
+
+                    <div class="doctor-info">
+
+                        <div class="doctor-avatar">
+                            👨‍⚕️
+                        </div>
+
+                        <div>
+                            <h3>Dr. Ravi Shetty</h3>
+
+                            <p>
+                                General Physician
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <span class="status offline">
+                            <span></span>
+                            Offline
+                        </span>
+
+                        <span class="time">
+                            Available Tomorrow
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PHC Services -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">PHC INFORMATION</p>
+
+                    <h2>PHC Services</h2>
+                </div>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>General Consultation</h3>
+                    <p>Available</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>Vaccination</h3>
+                    <p>Available</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>Laboratory</h3>
+                    <p>Available</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">💊</div>
+                    <h3>Pharmacy</h3>
+                    <p>Limited Stock</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🤰</div>
+                    <h3>Maternal Care</h3>
+                    <p>Available</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>Emergency Support</h3>
+                    <p>Available 24/7</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="bottom-grid">
+
+            <!-- Notifications -->
+            <div class="dashboard-box">
+
+                <div class="box-heading">
+                    <h2>🔔 Notifications</h2>
+                    <span>2 New</span>
+                </div>
+
+                <div class="notification-item">
+
+                    <div>
+                        <strong>Vaccination Reminder</strong>
+
+                        <p>
+                            Your next vaccination is due soon.
+                        </p>
+                    </div>
+
+                    <small>Today</small>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div>
+                        <strong>Health Camp</strong>
+
+                        <p>
+                            Free health camp this Saturday.
+                        </p>
+                    </div>
+
+                    <small>2 days</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Emergency -->
+            <div class="emergency-box">
+
+                <div class="emergency-icon">
+                    🚨
+                </div>
+
+                <div>
+                    <h2>Emergency Information</h2>
+
+                    <p>
+                        For medical emergencies, contact your
+                        nearest PHC or emergency service immediately.
+                    </p>
+
+                    <button class="emergency-btn">
+                        Emergency Contacts
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="patient-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart PHC - Sign Up</title>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <div class="signup-page">
+
+        <div class="signup-card">
+
+            <!-- Medical Logo -->
+            <div class="logo">
+                <div class="logo-circle">
+                    <span class="cross-horizontal"></span>
+                    <span class="cross-vertical"></span>
+                </div>
+            </div>
+
+
+            <!-- Heading -->
+            <h1>Create Your Account</h1>
+
+            <p class="welcome-text">
+                Join Smart PHC for better connected healthcare.
+            </p>
+
+
+            <!-- Sign Up Form -->
+            <form>
+
+                <!-- Full Name -->
+                <div class="input-group">
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+
+                <!-- Phone -->
+                <div class="input-group">
+                    <label>Phone Number</label>
+
+                    <input
+                      type="tel"
+                      id="phone"
+                      placeholder="Enter your 10-digit phone number"
+                      maxlength="10"
+                      inputmode="numeric"
+                      pattern="[0-9]{10}"
+                      required
+                    >
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label>Confirm Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+
+                <!-- Sign Up Button -->
+                <button type="submit" class="signup-btn">
+                    Create Account
+                </button>
+                <div id="signupMessage" class="signup-message"></div>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <p class="login-text">
+                Already have an account?
+
+                <a href="patient-login.html">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+<script src="signup.js"></script>
+</body>
+
+</html>

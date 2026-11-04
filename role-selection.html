@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart PHC - Choose Role</title>
+
+    <link rel="stylesheet" href="role-selection.css">
+</head>
+
+<body>
+
+    <div class="role-page">
+
+        <div class="role-card">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-circle">
+                    <span class="cross-horizontal"></span>
+                    <span class="cross-vertical"></span>
+                </div>
+            </div>
+
+            <h1>Welcome to <span>SMART PHC</span></h1>
+
+            <p class="subtitle">
+                Choose how you want to use Smart PHC
+            </p>
+
+
+            <!-- Role Options -->
+
+            <div class="role-options">
+
+                <!-- Patient -->
+                <div class="role-option" onclick="selectRole('patient')">
+
+                    <div class="role-icon">👤</div>
+
+                    <div class="role-info">
+                        <h2>Patient</h2>
+                        <p>
+                            Access healthcare services, doctors,
+                            health records and reminders.
+                        </p>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                </div>
+
+
+                <!-- Doctor -->
+                <div class="role-option" onclick="selectRole('doctor')">
+
+                    <div class="role-icon">👨‍⚕️</div>
+
+                    <div class="role-info">
+                        <h2>Doctor</h2>
+                        <p>
+                            Manage availability, consultations
+                            and patient healthcare information.
+                        </p>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                </div>
+
+
+                <!-- PHC Staff -->
+                <div class="role-option" onclick="selectRole('staff')">
+
+                    <div class="role-icon">🏥</div>
+
+                    <div class="role-info">
+                        <h2>PHC Staff</h2>
+                        <p>
+                            Manage PHC services, inventory,
+                            doctors and health updates.
+                        </p>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="role-selection.js"></script>
+
+</body>
+</html>

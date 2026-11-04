@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+
+/* Blurred background */
+
+.login-page::before {
+    content: "";
+
+    position: absolute;
+    inset: -8px;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 20, 30, 0.48),
+            rgba(0, 50, 60, 0.45)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(3px);
+
+    transform: scale(1.01);
+
+    z-index: 0;
+}
+
+
+/* Keep login card sharp */
+
+.login-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, 450px);
+
+    padding: 40px 35px;
+
+    /* Darker glass */
+    background: rgba(8, 35, 45, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(60, 210, 240, 0.12);
+
+    color: white;
+
+    text-align: center;
+
+    animation: cardAppear 1s ease forwards;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.logo-circle {
+    position: relative;
+
+    width: 72px;
+    height: 72px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 18px rgba(255, 255, 255, 0.5),
+        0 0 35px rgba(60, 210, 240, 0.5);
+
+    animation: logoPulse 3s infinite ease-in-out;
+}
+
+
+/* Medical cross */
+
+.cross-horizontal,
+.cross-vertical {
+    position: absolute;
+
+    background: white;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.cross-horizontal {
+    width: 38%;
+    height: 12%;
+}
+
+.cross-vertical {
+    width: 12%;
+    height: 38%;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.login-card h1 {
+    font-size: clamp(1.7rem, 5vw, 2.2rem);
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+}
+
+.login-card h1 span {
+    color: #8eeaff;
+
+    text-shadow:
+        0 0 15px rgba(80, 220, 255, 0.5);
+}
+
+.welcome-text {
+    font-size: 0.95rem;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    border-color: #8eeaff;
+
+    box-shadow:
+        0 0 15px rgba(80, 220, 255, 0.25);
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.password-box button {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+}
+
+.password-box button:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot {
+    text-align: right;
+
+    margin-top: -5px;
+
+    margin-bottom: 22px;
+}
+
+.forgot a {
+    color: #8eeaff;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    transition: 0.3s;
+}
+
+.forgot a:hover {
+    text-shadow:
+        0 0 10px rgba(80, 220, 255, 0.7);
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4cc9e8,
+            #1689a8
+        );
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(20, 160, 190, 0.3);
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(20, 190, 220, 0.5);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+.signup-text {
+    margin-top: 25px;
+
+    font-size: 0.9rem;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signup-text a {
+    color: #8eeaff;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    margin-left: 4px;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        box-shadow:
+            0 0 18px rgba(255, 255, 255, 0.5),
+            0 0 35px rgba(60, 210, 240, 0.5);
+    }
+
+    50% {
+        transform: scale(1.06);
+
+        box-shadow:
+            0 0 25px rgba(255, 255, 255, 0.8),
+            0 0 50px rgba(60, 210, 240, 0.7);
+    }
+}
+h1 span {
+    display: block;
+    margin-top: 5px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 20px 15px;
+
+        background-size: 100% 100%;
+    }
+
+    .login-card {
+        padding: 32px 24px;
+
+        border-radius: 22px;
+    }
+
+    .logo-circle {
+        width: 65px;
+        height: 65px;
+    }
+
+    .login-card h1 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* =========================
+   VERY SMALL DEVICES
+========================= */
+
+@media (max-width: 360px) {
+
+    .login-card {
+        padding: 28px 18px;
+    }
+
+    .login-card h1 {
+        font-size: 1.45rem;
+    }
+
+    .welcome-text {
+        font-size: 0.85rem;
+    }
+}
+.login-message {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.login-message.show {
+    display: block;
+}
+
+.login-message.error {
+    color: #ff9b9b;
+    background: rgba(255, 80, 80, 0.12);
+    border: 1px solid rgba(255, 100, 100, 0.35);
+}
+
+.login-message.success {
+    color: #7fffd4;
+    background: rgba(40, 200, 130, 0.12);
+    border: 1px solid rgba(40, 220, 150, 0.35);
+}

@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 15, 25, 0.55),
+            rgba(3, 15, 25, 0.65)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* PAGE */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+
+/* BACKGROUND */
+
+.login-page::before {
+    content: "";
+
+    position: absolute;
+    inset: -8px;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 20, 30, 0.48),
+            rgba(0, 50, 60, 0.45)
+        ),
+        url("images/smart-phc-bg.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(3px);
+
+    transform: scale(1.01);
+
+    z-index: 0;
+}
+
+
+/* CARD */
+
+.login-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, 450px);
+
+    padding: 40px 35px;
+
+    background: rgba(8, 35, 45, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(60, 210, 240, 0.12);
+
+    text-align: center;
+
+    animation: cardAppear 0.8s ease forwards;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.logo-circle {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 35px rgba(60, 210, 240, 0.45);
+}
+
+.cross-horizontal,
+.cross-vertical {
+    position: absolute;
+
+    background: white;
+
+    border-radius: 3px;
+}
+
+.cross-horizontal {
+    width: 32px;
+    height: 8px;
+
+    top: 29px;
+    left: 17px;
+}
+
+.cross-vertical {
+    width: 8px;
+    height: 32px;
+
+    top: 17px;
+    left: 29px;
+}
+
+
+/* HEADING */
+
+h1 {
+    font-size: clamp(25px, 4vw, 32px);
+
+    margin-bottom: 8px;
+}
+
+h1 span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #69e5ff;
+
+    text-shadow:
+        0 0 10px rgba(80, 220, 255, 0.5);
+}
+
+
+/* TEXT */
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    margin-bottom: 28px;
+
+    line-height: 1.5;
+}
+
+
+/* INPUT */
+
+.input-group {
+    position: relative;
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group input {
+    width: 100%;
+
+    display: block;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.input-group input:focus {
+    border-color: rgba(105, 229, 255, 0.6);
+
+    box-shadow:
+        0 0 15px rgba(60, 210, 240, 0.12);
+}
+
+
+/* PASSWORD */
+
+.password-box {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.password-box button {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    padding: 5px;
+}
+
+
+/* FORGOT */
+
+.forgot {
+    text-align: right;
+
+    margin-top: -8px;
+
+    margin-bottom: 22px;
+}
+
+.forgot a {
+    color: #69e5ff;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #55d9f5,
+        #398bbf
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(40, 180, 220, 0.2);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(40, 180, 220, 0.3);
+}
+
+
+/* MESSAGE */
+
+.login-message {
+    display: none;
+
+    margin-top: 16px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.login-message.show {
+    display: block;
+}
+
+.login-message.error {
+    color: #ff9b9b;
+
+    background: rgba(255, 80, 80, 0.12);
+
+    border: 1px solid rgba(255, 100, 100, 0.35);
+}
+
+.login-message.success {
+    color: #7fffd4;
+
+    background: rgba(40, 200, 130, 0.12);
+
+    border: 1px solid rgba(40, 220, 150, 0.35);
+}
+
+
+/* CHANGE ROLE */
+
+.back-text {
+    margin-top: 22px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 13px;
+}
+
+.back-text a {
+    color: #69e5ff;
+
+    text-decoration: none;
+}
+
+.back-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ANIMATION */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .login-card {
+        padding: 32px 22px;
+    }
+
+}
