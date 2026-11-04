@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - Service Management</title>
+    <link rel="stylesheet" href="service-management.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="logo">✚ SMART PHC</div>
+        <h3>Staff Portal</h3>
+
+        <ul class="nav-menu">
+            <li><a href="staff-dashboard.html">Dashboard</a></li>
+            <li><a href="doctor-management.html">Doctor Management</a></li>
+            <li><a href="patient-management.html">Patient Management</a></li>
+            <li><a href="service-management.html" class="active">PHC Services</a></li>
+            <li><a href="activity-monitoring.html">Activity Monitoring</a></li>
+            <li><a href="staff-login.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>PHC Service Management</h1>
+                <p class="welcome-text">Manage healthcare services provided by the PHC</p>
+            </div>
+            <div class="staff-profile">👤 PHC Staff</div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Services</h3>
+                <p id="totalServices">4</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Active Services</h3>
+                <p id="activeServices">3</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Inactive Services</h3>
+                <p id="inactiveServices">1</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Service Categories</h3>
+                <p id="serviceCategories">4</p>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <h2>Available PHC Services</h2>
+                <button class="add-btn" onclick="showServiceForm()">+ Add Service</button>
+            </div>
+
+            <input type="text" id="searchService"
+                placeholder="Search services by name or category...">
+
+            <div id="serviceForm" class="service-form" style="display:none;">
+
+                <h2>Add New Service</h2>
+
+                <input type="text" id="serviceName" placeholder="Service Name">
+
+                <select id="serviceCategory">
+                    <option value="">Select Category</option>
+                    <option value="General Healthcare">General Healthcare</option>
+                    <option value="Maternal Care">Maternal Care</option>
+                    <option value="Child Healthcare">Child Healthcare</option>
+                    <option value="Preventive Care">Preventive Care</option>
+                    <option value="Emergency Care">Emergency Care</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <textarea id="serviceDescription"
+                    placeholder="Service Description"></textarea>
+
+                <select id="serviceStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+                <button class="add-btn" onclick="addService()">Save Service</button>
+                <button class="cancel-btn" onclick="hideServiceForm()">Cancel</button>
+
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service ID</th>
+                            <th>Service Name</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="serviceTable"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="service-management.js"></script>
+
+</body>
+</html>
