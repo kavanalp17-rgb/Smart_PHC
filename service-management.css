@@ -227,6 +227,21 @@ th {
     color: #555;
 }
 
+/* Edit and Delete button alignment */
+th:last-child,
+td:last-child {
+    text-align: center;
+    width: 120px;
+}
+
+td:last-child button {
+    display: block;
+    width: 75px;
+    margin: 5px auto;
+    padding: 9px 10px;
+    text-align: center;
+}
+
 @media (max-width: 900px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
