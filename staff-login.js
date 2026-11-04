@@ -32,15 +32,8 @@ toggleStaffPassword.addEventListener("click", function () {
 
 
 // Staff Login
-
 staffForm.addEventListener("submit", function (event) {
-
     event.preventDefault();
 
-    staffMessage.textContent =
-        "PHC Staff login system will be connected to the PHC database.";
-
-    staffMessage.className =
-        "login-message show success";
-
+    window.location.href = "staff-dashboard.html";
 });
