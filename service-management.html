@@ -36,25 +36,27 @@
         </header>
 
         <section class="stats-grid">
+
             <div class="stat-card">
                 <h3>Total Services</h3>
-                <p id="totalServices">4</p>
+                <p id="totalServices">5</p>
             </div>
 
             <div class="stat-card">
                 <h3>Active Services</h3>
-                <p id="activeServices">3</p>
+                <p id="activeServices">5</p>
             </div>
 
             <div class="stat-card">
                 <h3>Inactive Services</h3>
-                <p id="inactiveServices">1</p>
+                <p id="inactiveServices">0</p>
             </div>
 
             <div class="stat-card">
                 <h3>Service Categories</h3>
-                <p id="serviceCategories">4</p>
+                <p id="serviceCategories">3</p>
             </div>
+
         </section>
 
         <section class="panel">
@@ -69,19 +71,20 @@
 
             <div id="serviceForm" class="service-form" style="display:none;">
 
-                <h2>Add New Service</h2>
+                <h2>Add New PHC Service</h2>
 
-                <input type="text" id="serviceName" placeholder="Service Name">
+                <input type="text" id="serviceName"
+                    placeholder="Service Name" required>
 
-                <select id="serviceCategory">
+                <select id="serviceCategory" required>
                     <option value="">Select Category</option>
                     <option value="Diagnostic Service">Diagnostic Service</option>
-<option value="Preventive Healthcare">Preventive Healthcare</option>
-<option value="Emergency Service">Emergency Service</option>
+                    <option value="Preventive Healthcare">Preventive Healthcare</option>
+                    <option value="Emergency Service">Emergency Service</option>
                 </select>
 
                 <textarea id="serviceDescription"
-                    placeholder="Service Description"></textarea>
+                    placeholder="Service Description" required></textarea>
 
                 <select id="serviceStatus">
                     <option value="Active">Active</option>
@@ -94,6 +97,7 @@
             </div>
 
             <div class="table-container">
+
                 <table>
                     <thead>
                         <tr>
@@ -108,6 +112,7 @@
 
                     <tbody id="serviceTable"></tbody>
                 </table>
+
             </div>
 
         </section>
