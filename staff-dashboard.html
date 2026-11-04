@@ -6,7 +6,108 @@
     <title>SMART PHC - Staff Dashboard</title>
     <link rel="stylesheet" href="staff-dashboard.css">
 </head>
+
 <body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">✚ SMART PHC</div>
+        <h3>Staff Portal</h3>
+
+        <ul class="nav-menu">
+            <li><a href="staff-dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="doctor-management.html">Doctor Management</a></li>
+            <li><a href="patient-management.html">Patient Management</a></li>
+            <li><a href="service-management.html">PHC Services</a></li>
+            <li><a href="activity-monitoring.html">Activity Monitoring</a></li>
+            <li><a href="staff-login.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Staff Dashboard</h1>
+                <p class="welcome-text">Welcome back! Manage your PHC activities here.</p>
+            </div>
+
+            <div class="staff-profile">
+                👤 PHC Staff
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Patients</h3>
+                <p>--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Registered Doctors</h3>
+                <p>--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Available Services</h3>
+                <p>--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>PHC Activities</h3>
+                <p>--</p>
+            </div>
+
+        </section>
+
+        <!-- Dashboard Details -->
+        <section class="content-grid">
+
+            <div class="panel">
+                <h2>Recent PHC Activities</h2>
+
+                <div class="activity-item">
+                    Staff dashboard initialized
+                    <span class="status">System</span>
+                </div>
+
+                <div class="activity-item">
+                    Doctor management section
+                    <span class="status">Planned</span>
+                </div>
+
+                <div class="activity-item">
+                    Patient management section
+                    <span class="status">Planned</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Notifications & Alerts</h2>
+
+                <div class="alert">
+                    Doctor availability updates will appear here.
+                </div>
+
+                <div class="alert">
+                    Medicine and vaccine stock alerts will appear here.
+                </div>
+
+                <div class="alert">
+                    New PHC service notifications will appear here.
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
 
 </body>
 </html>
