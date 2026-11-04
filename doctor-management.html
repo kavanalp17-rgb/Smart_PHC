@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - Doctor Management</title>
+    <link rel="stylesheet" href="doctor-management.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="logo">✚ SMART PHC</div>
+        <h3>Staff Portal</h3>
+
+        <ul class="nav-menu">
+            <li><a href="staff-dashboard.html">Dashboard</a></li>
+            <li><a href="doctor-management.html" class="active">Doctor Management</a></li>
+            <li><a href="patient-management.html">Patient Management</a></li>
+            <li><a href="service-management.html">PHC Services</a></li>
+            <li><a href="activity-monitoring.html">Activity Monitoring</a></li>
+            <li><a href="staff-login.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Doctor Management</h1>
+                <p class="welcome-text">Manage doctor details and availability</p>
+            </div>
+            <div class="staff-profile">👤 PHC Staff</div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Doctors</h3>
+                <p id="totalDoctors">3</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Available</h3>
+                <p id="availableDoctors">2</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Busy</h3>
+                <p id="busyDoctors">1</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Offline</h3>
+                <p id="offlineDoctors">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <h2>Doctor Details</h2>
+                <button class="add-btn" onclick="showDoctorForm()">
+                    + Add Doctor
+                </button>
+            </div>
+
+            <input
+                type="text"
+                id="searchDoctor"
+                placeholder="Search doctor by name or specialization..."
+            >
+
+            <div id="doctorForm" class="doctor-form" style="display:none;">
+
+                <h2>Add New Doctor</h2>
+
+                <input type="text" id="doctorName" placeholder="Doctor Name">
+                <input type="text" id="doctorSpecialization" placeholder="Specialization">
+                <input type="email" id="doctorEmail" placeholder="Email Address">
+                <input type="tel" id="doctorPhone" placeholder="Phone Number">
+
+                <select id="doctorStatus">
+                    <option value="Available">Available</option>
+                    <option value="Busy">Busy</option>
+                    <option value="Offline">Offline</option>
+                </select>
+
+                <button class="add-btn" onclick="addDoctor()">Save Doctor</button>
+                <button class="cancel-btn" onclick="hideDoctorForm()">Cancel</button>
+
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>Specialization</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Availability</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="doctorTable">
+                        <tr>
+                            <td>Dr. Ananya Rao</td>
+                            <td>General Physician</td>
+                            <td>ananya@example.com</td>
+                            <td>9876543210</td>
+                            <td><span class="status available">Available</span></td>
+                            <td>—</td>
+                        </tr>
+
+                        <tr>
+                            <td>Dr. Rahul Kumar</td>
+                            <td>Cardiologist</td>
+                            <td>rahul@example.com</td>
+                            <td>9876543211</td>
+                            <td><span class="status busy">Busy</span></td>
+                            <td>—</td>
+                        </tr>
+
+                        <tr>
+                            <td>Dr. Sneha Shetty</td>
+                            <td>Pediatrician</td>
+                            <td>sneha@example.com</td>
+                            <td>9876543212</td>
+                            <td><span class="status available">Available</span></td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="doctor-management.js"></script>
+</body>
+</html>
