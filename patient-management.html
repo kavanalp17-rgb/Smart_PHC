@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - Patient Management</title>
+    <link rel="stylesheet" href="patient-management.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="logo">✚ SMART PHC</div>
+        <h3>Staff Portal</h3>
+
+        <ul class="nav-menu">
+            <li><a href="staff-dashboard.html">Dashboard</a></li>
+            <li><a href="doctor-management.html">Doctor Management</a></li>
+            <li><a href="patient-management.html" class="active">Patient Management</a></li>
+            <li><a href="service-management.html">PHC Services</a></li>
+            <li><a href="activity-monitoring.html">Activity Monitoring</a></li>
+            <li><a href="staff-login.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Patient Management</h1>
+                <p class="welcome-text">Manage registered patient information</p>
+            </div>
+            <div class="staff-profile">👤 PHC Staff</div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Patients</h3>
+                <p id="totalPatients">3</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Male Patients</h3>
+                <p id="malePatients">1</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Female Patients</h3>
+                <p id="femalePatients">2</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Registered Today</h3>
+                <p id="todayPatients">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <h2>Patient Records</h2>
+                <button class="add-btn" onclick="showPatientForm()">+ Add Patient</button>
+            </div>
+
+            <input type="text" id="searchPatient"
+                placeholder="Search patient by name or phone number...">
+
+            <div id="patientForm" class="patient-form" style="display:none;">
+
+                <h2>Register New Patient</h2>
+
+                <input type="text" id="patientName" placeholder="Patient Name">
+
+                <input type="number" id="patientAge" placeholder="Age">
+
+                <select id="patientGender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="tel" id="patientPhone" placeholder="Phone Number">
+
+                <input type="text" id="patientAddress" placeholder="Address">
+
+                <button class="add-btn" onclick="addPatient()">Save Patient</button>
+                <button class="cancel-btn" onclick="hidePatientForm()">Cancel</button>
+
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="patientTable"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="patient-management.js"></script>
+
+</body>
+</html>
