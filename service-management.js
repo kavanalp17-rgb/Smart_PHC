@@ -1,32 +1,38 @@
-
 let services = [
     {
         id: "S001",
-        name: "General Consultation",
-        category: "General Healthcare",
-        description: "General health checkup and doctor consultation.",
+        name: "ECG",
+        category: "Diagnostic Service",
+        description: "Electrocardiogram test to monitor heart activity.",
         status: "Active"
     },
     {
         id: "S002",
-        name: "Maternal Health Care",
-        category: "Maternal Care",
-        description: "Healthcare support for pregnant women and mothers.",
+        name: "Scanning / Ultrasound",
+        category: "Diagnostic Service",
+        description: "Ultrasound scanning facility for medical examination.",
         status: "Active"
     },
     {
         id: "S003",
-        name: "Child Vaccination",
-        category: "Child Healthcare",
-        description: "Routine vaccination services for children.",
+        name: "Vaccination",
+        category: "Preventive Healthcare",
+        description: "Vaccination services for children and adults.",
         status: "Active"
     },
     {
         id: "S004",
-        name: "Health Awareness Camps",
-        category: "Preventive Care",
-        description: "Health awareness and preventive screening programs.",
-        status: "Inactive"
+        name: "First Aid",
+        category: "Emergency Service",
+        description: "Basic first aid and immediate medical assistance.",
+        status: "Active"
+    },
+    {
+        id: "S005",
+        name: "Emergency Care",
+        category: "Emergency Service",
+        description: "Immediate care for urgent medical conditions.",
+        status: "Active"
     }
 ];
 
