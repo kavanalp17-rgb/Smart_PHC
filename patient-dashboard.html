@@ -32,27 +32,27 @@
                 Dashboard
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="#doctors" class="nav-link">
                 <span>👨‍⚕️</span>
                 Doctors
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="#services" class="nav-link">
                 <span>🏥</span>
                 PHC Services
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="#medicines" class="nav-link">
                 <span>💊</span>
                 Medicines
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="#reminders" class="nav-link">
                 <span>🔔</span>
                 Reminders
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="#health-records" class="nav-link">
                 <span>📋</span>
                 Health Records
             </a>
@@ -69,10 +69,16 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Mobile Menu Button -->
+<button class="menu-toggle" id="menuToggle">
+    ☰
+</button>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
         <!-- Top Bar -->
-        <header class="top-bar">
-
+<header class="top-bar" id="dashboard">
             <div>
                 <p class="small-text">Patient Dashboard</p>
 
@@ -134,8 +140,7 @@
 
 
         <!-- Doctor Availability -->
-        <section class="dashboard-section">
-
+<section class="dashboard-section" id="doctors">
             <div class="section-heading">
 
                 <div>
@@ -266,8 +271,7 @@
 
 
         <!-- PHC Services -->
-        <section class="dashboard-section">
-
+<section class="dashboard-section" id="services">
             <div class="section-heading">
 
                 <div>
@@ -325,7 +329,197 @@
             </div>
 
         </section>
+<!-- Medicines Section -->
+<section class="dashboard-section" id="medicines">
 
+    <div class="section-header">
+        <div>
+            <h2>💊 Medicine Availability</h2>
+            <p>Check the availability of medicines at your PHC.</p>
+        </div>
+    </div>
+
+    <div class="medicine-grid">
+
+        <div class="medicine-card">
+            <h3>Paracetamol</h3>
+            <p>Quantity: 120 tablets</p>
+            <span class="stock available">Available</span>
+            <p>Expiry: 12/2027</p>
+        </div>
+
+        <div class="medicine-card">
+            <h3>Amoxicillin</h3>
+            <p>Quantity: 15 strips</p>
+            <span class="stock low">Low Stock</span>
+            <p>Expiry: 08/2027</p>
+        </div>
+
+        <div class="medicine-card">
+            <h3>Vitamin C</h3>
+            <p>Quantity: 0 tablets</p>
+            <span class="stock unavailable">Out of Stock</span>
+            <p>Expiry: N/A</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Reminders Section -->
+<!-- Health Reminders Section -->
+<section class="dashboard-section" id="reminders">
+
+    <div class="section-header">
+        <div>
+            <h2>🔔 Health Reminders</h2>
+            <p>Stay updated with your important health activities.</p>
+        </div>
+    </div>
+
+    <div class="reminder-list">
+
+        <div class="reminder-card">
+            <div class="reminder-icon">💉</div>
+            <div class="reminder-info">
+                <h3>Vaccination Reminder</h3>
+                <p>Visit your PHC for your scheduled vaccination.</p>
+                <span>November 10, 2026</span>
+            </div>
+            <span class="reminder-status upcoming">Upcoming</span>
+        </div>
+
+        <div class="reminder-card">
+            <div class="reminder-icon">💊</div>
+            <div class="reminder-info">
+                <h3>Medicine Reminder</h3>
+                <p>Take your prescribed medicine after breakfast.</p>
+                <span>Daily · 9:00 AM</span>
+            </div>
+            <span class="reminder-status daily">Daily</span>
+        </div>
+
+        <div class="reminder-card">
+            <div class="reminder-icon">🩺</div>
+            <div class="reminder-info">
+                <h3>Health Check-up</h3>
+                <p>Complete your routine health check-up.</p>
+                <span>November 15, 2026</span>
+            </div>
+            <span class="reminder-status upcoming">Upcoming</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Health Records Section -->
+<section class="dashboard-section" id="health-records">
+
+    <div class="section-header">
+        <div>
+            <h2>📋 My Health Records</h2>
+            <p>View your medical history and health information.</p>
+        </div>
+    </div>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+            <span>👤</span>
+            <h3>Patient Information</h3>
+            <p>View your personal health profile.</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="record-card">
+            <span>🩺</span>
+            <h3>Consultation History</h3>
+            <p>View your previous doctor consultations.</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="record-card">
+            <span>💊</span>
+            <h3>Prescriptions</h3>
+            <p>View medicines prescribed by your doctor.</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="record-card">
+            <span>💉</span>
+            <h3>Vaccination History</h3>
+            <p>View your vaccination records.</p>
+            <button>View Details</button>
+        </div>
+
+    </div>
+
+</section>
+<!-- Patient Profile Section -->
+<section class="dashboard-section" id="profile">
+
+    <div class="section-header">
+        <div>
+            <h2>👤 My Profile</h2>
+            <p>View your personal information.</p>
+        </div>
+    </div>
+
+    <div class="profile-card">
+        <button class="edit-profile-btn" id="editProfileBtn">
+    ✏️ Edit Profile
+</button>
+
+        <div class="profile-header">
+            <div class="profile-avatar-large">👤</div>
+            <div>
+                <h3 id="profileName">Patient Name</h3>
+                <p>Patient Profile</p>
+            </div>
+        </div>
+
+        <div class="profile-details">
+
+            <div class="profile-detail">
+                <span>Patient ID</span>
+                <strong id="profilePatientId">Not assigned</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Email</span>
+                <strong id="profileEmail">Not available</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Phone Number</span>
+                <strong id="profilePhone">Not available</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Age</span>
+                <strong id="profileAge">Not provided</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Gender</span>
+                <strong id="profileGender">Not provided</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Blood Group</span>
+<strong id="profileBloodGroup">Not provided</strong>
+            </div>
+            <div class="profile-detail">
+    <span>Address</span>
+    <strong id="profileAddress">Not provided</strong>
+</div>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- Bottom Section -->
         <section class="bottom-grid">
@@ -394,9 +588,81 @@
 
         </section>
 
+<!-- Profile Success Popup -->
+<div class="success-modal" id="successModal">
+    <div class="success-content">
+        <div class="success-icon">✓</div>
+        <h2>Profile Updated!</h2>
+        <p>Your personal information has been saved successfully.</p>
+        <button id="successOkBtn">Continue</button>
+    </div>
+</div>
+
+
     </main>
+<!-- Health Record Popup -->
+<div class="record-modal" id="recordModal">
+    <div class="record-modal-content">
 
+        <button class="close-modal" id="closeModal">&times;</button>
 
+        <h2 id="modalTitle">Health Record</h2>
+
+        <div id="modalBody"></div>
+
+    </div>
+</div>
+<!-- Edit Profile Popup -->
+<div class="record-modal" id="editProfileModal">
+    <div class="record-modal-content">
+
+        <button class="close-modal" id="closeEditModal">&times;</button>
+
+        <h2>✏️ Edit My Profile</h2>
+
+        <form id="editProfileForm">
+
+            <label for="editPhone">Phone Number</label>
+            <input type="tel" id="editPhone" maxlength="10"
+                   placeholder="Enter phone number">
+
+            <label for="editAge">Age</label>
+            <input type="number" id="editAge" min="1" max="120"
+                   placeholder="Enter your age">
+
+            <label for="editGender">Gender</label>
+            <select id="editGender">
+                <option value="">Select Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+
+            <label for="editBloodGroup">Blood Group</label>
+            <select id="editBloodGroup">
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <label for="editAddress">Address</label>
+            <textarea id="editAddress" placeholder="Enter your address"></textarea>
+
+            <button type="submit" class="save-profile-btn">
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+</div>
     <script src="patient-dashboard.js"></script>
 
 </body>

@@ -1,19 +1,15 @@
+
 const loginForm = document.querySelector("form");
 const loginMessage = document.createElement("div");
 
 loginMessage.className = "login-message";
 loginForm.appendChild(loginMessage);
 
-
-// =========================
-// PASSWORD SHOW / HIDE
-// =========================
-
+// Password Show / Hide
 const password = document.getElementById("password");
 const togglePassword = document.getElementById("togglePassword");
 
 togglePassword.addEventListener("click", function () {
-
     if (password.type === "password") {
         password.type = "text";
         togglePassword.textContent = "🙈";
@@ -21,65 +17,70 @@ togglePassword.addEventListener("click", function () {
         password.type = "password";
         togglePassword.textContent = "👁";
     }
-
 });
+// Automatically fetch Patient ID after signup
+const patientIDInput = document.getElementById("patientID");
 
+const currentPatient = JSON.parse(
+    localStorage.getItem("smartPHCUser")
+);
 
-// =========================
-// LOGIN
-// =========================
+if (currentPatient && currentPatient.patientID) {
+    patientIDInput.value = currentPatient.patientID;
+}
 
+// Patient Login
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const inputs = loginForm.querySelectorAll("input");
-
-    const emailPhone = inputs[0].value.trim();
+   const patientID = patientIDInput.value.trim().toUpperCase();
     const passwordValue = password.value;
 
-    const savedUser = JSON.parse(
-        localStorage.getItem("smartPHCUser")
+    // Get all registered patients
+    const patients = JSON.parse(
+        localStorage.getItem("smartPHCPatients")
+    ) || [];
+
+    // Find patient using Patient ID
+    const savedUser = patients.find(
+        patient => patient.patientID === patientID
     );
 
-    // No account found
+    // Check whether Patient ID exists
     if (!savedUser) {
         showMessage(
-            "No account found. Please Sign Up first.",
+            "Patient ID not found. Please sign up first.",
             "error"
         );
         return;
     }
 
-    // Check email/phone and password
-    const validUser =
-        (emailPhone === savedUser.email ||
-         emailPhone === savedUser.phone) &&
-        passwordValue === savedUser.password;
-
-    if (!validUser) {
+    // Check password
+    if (passwordValue !== savedUser.password) {
         showMessage(
-            "Invalid email/phone or password.",
+            "Incorrect password. Please try again.",
             "error"
         );
         return;
     }
 
-    // Successful login
+    // Save logged-in patient
+    localStorage.setItem(
+        "smartPHCUser",
+        JSON.stringify(savedUser)
+    );
+
     showMessage(
         "Login successful! Redirecting...",
         "success"
     );
 
-    setTimeout(() => {
+    setTimeout(function () {
         window.location.href = "patient-dashboard.html";
     }, 1500);
 });
 
-
-// =========================
-// MESSAGE
-// =========================
-
+// Display Message
 function showMessage(message, type) {
     loginMessage.textContent = message;
     loginMessage.className =
