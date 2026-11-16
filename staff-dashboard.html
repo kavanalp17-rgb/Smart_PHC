@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PHC Staff Dashboard | SMART PHC</title>
+
+    <link rel="stylesheet" href="staff-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="logo-circle">
+                <span class="cross-horizontal"></span>
+                <span class="cross-vertical"></span>
+            </div>
+
+            <h2>SMART <span>PHC</span></h2>
+            <p>Healthcare Management</p>
+        </div>
+
+        <div class="sidebar-heading">MAIN MENU</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard" class="nav-link active">
+                <span>📊</span> Dashboard
+            </a>
+
+            <a href="doctor-management/doctor-management.html"
+               class="nav-link">
+                <span>👨‍⚕️</span> Doctor Management
+            </a>
+
+            <a href="patient-records/patient-records.html"
+               class="nav-link">
+                <span>📋</span> Patient Records
+            </a>
+
+            <a href="medicine-stock/medicine-stock.html"
+               class="nav-link">
+                <span>💊</span> Medicine Stocks
+            </a>
+
+            <a href="vaccination/vaccination.html"
+               class="nav-link">
+                <span>💉</span> Vaccination
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../role-selection.html" class="nav-link logout-link">
+                <span>🚪</span> Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content" id="dashboard">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+
+            <div class="page-heading">
+                <p class="small-text">SMART PHC / Dashboard</p>
+                <h1>PHC Staff Dashboard</h1>
+            </div>
+
+            <div class="staff-profile">
+                <div class="profile-avatar">👤</div>
+
+                <div>
+                    <h3>PHC Staff</h3>
+                    <p>Staff Administrator</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div>
+                <p class="welcome-label">WELCOME BACK!</p>
+
+                <h2>Welcome to SMART PHC</h2>
+
+                <p>
+                    Manage your Primary Health Centre activities
+                    from one place.
+                </p>
+
+                <span class="date-text" id="currentDate"></span>
+            </div>
+
+            <div class="welcome-icon">🏥</div>
+
+        </section>
+
+
+        <!-- Overview -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Dashboard Overview</h2>
+                    <p>A quick overview of your PHC activities.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍⚕️</div>
+
+                    <div>
+                        <p>Total Doctors</p>
+                        <h3>--</h3>
+                        <span>Doctor records</span>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+
+                    <div>
+                        <p>Total Patients</p>
+                        <h3>--</h3>
+                        <span>Registered patients</span>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">💊</div>
+
+                    <div>
+                        <p>Medicine Items</p>
+                        <h3>--</h3>
+                        <span>Stock records</span>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">💉</div>
+
+                    <div>
+                        <p>Vaccination Records</p>
+                        <h3>--</h3>
+                        <span>Vaccination entries</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Management Modules -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>PHC Management</h2>
+
+                    <p>
+                        Select a module to manage its information
+                        and activities.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="module-grid">
+
+                <!-- Doctor Management -->
+                <a href="doctor-management/doctor-management.html"
+                   class="module-card">
+
+                    <div class="module-icon doctor-icon">👨‍⚕️</div>
+
+                    <h3>Doctor Management</h3>
+
+                    <p>
+                        Manage doctor profiles, specializations
+                        and availability.
+                    </p>
+
+                    <div class="module-link">
+                        Open Module <span>→</span>
+                    </div>
+
+                </a>
+
+
+                <!-- Patient Records -->
+                <a href="patient-records/patient-records.html"
+                   class="module-card">
+
+                    <div class="module-icon patient-icon">📋</div>
+
+                    <h3>Patient Records</h3>
+
+                    <p>
+                        View and manage patient registration
+                        and record information.
+                    </p>
+
+                    <div class="module-link">
+                        Open Module <span>→</span>
+                    </div>
+
+                </a>
+
+
+                <!-- Medicine Stocks -->
+                <a href="medicine-stock/medicine-stock.html"
+                   class="module-card">
+
+                    <div class="module-icon medicine-icon">💊</div>
+
+                    <h3>Medicine Stocks</h3>
+
+                    <p>
+                        Monitor medicine quantities and
+                        stock availability.
+                    </p>
+
+                    <div class="module-link">
+                        Open Module <span>→</span>
+                    </div>
+
+                </a>
+
+
+                <!-- Vaccination -->
+                <a href="vaccination/vaccination.html"
+                   class="module-card">
+
+                    <div class="module-icon vaccine-icon">💉</div>
+
+                    <h3>Vaccination</h3>
+
+                    <p>
+                        Manage vaccination information
+                        and vaccination records.
+                    </p>
+
+                    <div class="module-link">
+                        Open Module <span>→</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Activity -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Activity</h2>
+
+                    <p>
+                        Latest updates from your PHC modules.
+                    </p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+
+                <div class="empty-icon">📌</div>
+
+                <h3>No Recent Activities</h3>
+
+                <p>
+                    Activities will appear here when module
+                    functionality is connected.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>© 2026 SMART PHC | Primary Health Centre Management System</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="staff-dashboard.js"></script>
+
+</body>
+</html>
