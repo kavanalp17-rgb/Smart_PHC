@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart PHC - Medicine & Vaccination</title>
+    <link rel="stylesheet" href="medicine-vaccine.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">✚</div>
+            <span>SMART PHC</span>
+        </div>
+
+        <nav>
+            <a href="patient-dashboard.html" class="nav-link">🏠 Dashboard</a>
+            <a href="patient-dashboard.html#doctors" class="nav-link">👨‍⚕️ Doctors</a>
+            <a href="patient-dashboard.html#services" class="nav-link">🏥 PHC Services</a>
+            <a href="medicine-vaccine.html" class="nav-link active">💊 Medicines & Vaccines</a>
+        </nav>
+
+        <a href="patient-dashboard.html" class="back-btn">
+            ← Back to Dashboard
+        </a>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="top-bar">
+            <div>
+                <p class="small-text">SMART PHC INVENTORY</p>
+                <h1>Medicine & <span>Vaccination</span></h1>
+                <p class="subtitle">Medicine and vaccine availability management</p>
+            </div>
+            <div class="profile-avatar">👤</div>
+        </header>
+
+
+        <!-- FIRST PAGE: THREE CARDS -->
+        <section class="main-options" id="homePage">
+
+            <button class="option-card" id="medicineBtn">
+                <span class="option-icon">💊</span>
+                <h2>Medicines</h2>
+                <p>Check medicine availability</p>
+            </button>
+
+            <button class="option-card" id="vaccineBtn">
+                <span class="option-icon">💉</span>
+                <h2>Vaccines</h2>
+                <p>Check vaccine availability</p>
+            </button>
+
+            <button class="option-card" id="updateBtn">
+                <span class="option-icon">📝</span>
+                <h2>Add / Update</h2>
+                <p>Manage inventory details</p>
+            </button>
+
+        </section>
+
+
+        <!-- MEDICINE PAGE -->
+        <section class="content-panel" id="medicinePage" hidden>
+
+            <button class="back-button" onclick="showHome()">← Back</button>
+
+            <h2>💊 Medicine Availability</h2>
+            <p class="subtitle">Check the availability of medicines.</p>
+
+            <div class="item-grid" id="medicineList"></div>
+
+        </section>
+
+
+        <!-- VACCINE PAGE -->
+        <section class="content-panel" id="vaccinePage" hidden>
+
+            <button class="back-button" onclick="showHome()">← Back</button>
+
+            <h2>💉 Vaccine Availability</h2>
+            <p class="subtitle">Check the availability of vaccines.</p>
+
+            <div class="item-grid" id="vaccineList"></div>
+
+        </section>
+
+
+        <!-- ADD / UPDATE PAGE -->
+        <section class="content-panel" id="updatePage" hidden>
+
+            <button class="back-button" onclick="showHome()">← Back</button>
+
+            <h2>📝 Add / Update Inventory</h2>
+            <p class="subtitle">Enter the item details and availability status.</p>
+
+            <form id="inventoryForm">
+
+                <label for="itemName">Name</label>
+                <input
+                    type="text"
+                    id="itemName"
+                    placeholder="Enter medicine or vaccine name"
+                    required
+                >
+
+                <label for="itemType">Item Type</label>
+                <select id="itemType" required>
+                    <option value="">Select Item Type</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="vaccine">Vaccine</option>
+                </select>
+
+                <label for="itemStatus">Status</label>
+                <select id="itemStatus" required>
+                    <option value="">Select Status</option>
+                    <option value="available">Available</option>
+                    <option value="unavailable">Not Available</option>
+                </select>
+
+                <button type="submit" class="save-btn">
+                    Add / Update
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+            <div class="saved-section">
+                <h2>Inventory Details</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Item Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="inventoryTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+            © 2026 Smart PHC | Medicine & Vaccination Management
+        </footer>
+
+    </main>
+
+    <script src="medicine-vaccine.js"></script>
+
+</body>
+</html>
