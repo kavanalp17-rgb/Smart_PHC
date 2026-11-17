@@ -747,3 +747,171 @@ body {
         padding: 21px;
     }
 }
+
+/* =================================
+   PATIENT MANAGEMENT SUBMENU
+================================= */
+
+.submenu {
+    display: none;
+    padding-left: 18px;
+    margin: 4px 0 8px;
+}
+
+.submenu.show {
+    display: block;
+}
+
+.submenu .nav-link {
+    font-size: 14px;
+    padding: 11px 12px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
+
+.submenu .nav-link:hover {
+    background: rgba(255,255,255,0.10);
+}
+
+.nav-link .arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-link.expanded .arrow {
+    transform: rotate(180deg);
+}
+
+/* Patient Management parent */
+#patientManagementToggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Patient management sections */
+#patient-management {
+    scroll-margin-top: 25px;
+}
+
+.patient-module {
+    scroll-margin-top: 25px;
+}
+
+/* Patient Management module card */
+.patient-module .section-heading {
+    margin-bottom: 20px;
+}
+
+/* Mobile adjustments */
+@media(max-width: 768px) {
+    .submenu {
+        padding-left: 12px;
+    }
+}
+/* Show only the selected patient section */
+
+.patient-module {
+    display: none;
+}
+
+.patient-module.active {
+    display: block;
+}
+
+/* ==========================================
+   HEALTH RECORDS MANAGEMENT DESIGN
+========================================== */
+
+.health-add-button,
+.health-edit-button,
+.health-save-button,
+.health-cancel-button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 8px 10px 0;
+}
+
+.health-add-button,
+.health-save-button {
+    background: #16a085;
+    color: white;
+}
+
+.health-edit-button {
+    background: #2874a6;
+    color: white;
+}
+
+.health-cancel-button {
+    background: #64748b;
+    color: white;
+}
+
+.health-record-card,
+.health-form-container {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 22px;
+    margin: 18px 0;
+}
+
+.health-record-card h4,
+.health-form-container h3 {
+    color: #7ee7f5;
+    margin-bottom: 15px;
+}
+
+.health-record-card p {
+    margin: 9px 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.health-form-container form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.health-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.health-form-group label {
+    color: #d8f3f7;
+    font-weight: 600;
+}
+
+.health-form-group input,
+.health-form-group textarea,
+.health-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #52717c;
+    border-radius: 7px;
+    background: #092b35;
+    color: white;
+    font-size: 15px;
+}
+
+.health-form-group textarea {
+    resize: vertical;
+}
+
+.health-form-container form button {
+    align-self: end;
+}
+
+@media(max-width: 700px) {
+    .health-form-container form {
+        grid-template-columns: 1fr;
+    }
+}
