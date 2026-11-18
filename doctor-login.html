@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,23 +33,22 @@
                 Login to manage your patients and consultations.
             </p>
 
-
-            <form>
+            <form id="doctorLoginForm">
 
                 <div class="input-group">
-                    <label>Email or Phone</label>
+                    <label for="doctorEmailPhone">Email or Phone</label>
 
                     <input
                         type="text"
+                        id="doctorEmailPhone"
                         placeholder="Enter your email or phone"
                         required
                     >
                 </div>
 
-
                 <div class="input-group">
 
-                    <label>Password</label>
+                    <label for="doctorPassword">Password</label>
 
                     <div class="password-box">
 
@@ -70,13 +70,11 @@
 
                 </div>
 
-
                 <div class="forgot">
                     <a href="forgot.html">
                         Forgot Password?
                     </a>
                 </div>
-
 
                 <button
                     type="submit"
@@ -87,9 +85,7 @@
 
             </form>
 
-
             <div id="doctorMessage" class="login-message"></div>
-
 
             <p class="back-text">
                 ←
@@ -101,7 +97,6 @@
         </div>
 
     </div>
-
 
     <script src="doctor-login.js"></script>
 

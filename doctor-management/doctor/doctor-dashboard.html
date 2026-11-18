@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctor-dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>SMART PHC</h2>
+                <p>Doctor Panel</p>
+            </div>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#patients">My Patients</a>
+                <a href="#availability">Availability</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="menuToggle" class="menu-toggle">☰</button>
+                <h2>Doctor Dashboard</h2>
+                <div class="doctor-profile">
+                    <span id="doctorName">Doctor</span>
+                </div>
+            </header>
+
+            <!-- WELCOME -->
+            <section class="welcome-section">
+                <h1>Welcome, <span id="welcomeDoctorName">Doctor</span>!</h1>
+                <p>Manage your patients and view their medical information.</p>
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Patients</h3>
+                    <p id="totalPatients">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Available Status</h3>
+                    <p id="doctorAvailability">Loading...</p>
+                </div>
+            </section>
+
+            <!-- AVAILABILITY -->
+            <section class="content-section" id="availability">
+                <h2>My Availability</h2>
+                <p id="availabilityText">Your availability status will appear here.</p>
+            </section>
+
+            <!-- PATIENTS -->
+            <section class="content-section" id="patients">
+                <h2>My Patients</h2>
+
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="patientSearch"
+                        placeholder="Search patients by name or phone number..."
+                    >
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Patient Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientTableBody">
+                            <tr>
+                                <td colspan="6">No patients found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PATIENT RECORD VIEW -->
+            <section class="content-section" id="patientDetails" style="display:none;">
+                <h2>Patient Medical Records</h2>
+                <div id="patientDetailsContent"></div>
+                <button id="closePatientDetails">Close</button>
+            </section>
+
+            <footer>
+                <p>© 2026 SMART PHC | Doctor Dashboard</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="doctor-dashboard.js"></script>
+</body>
+</html>
