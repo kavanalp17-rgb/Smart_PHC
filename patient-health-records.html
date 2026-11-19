@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - Health Records</title>
+    <link rel="stylesheet" href="patient-dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="brand">
+        <div class="brand-logo">
+            <span class="cross-horizontal"></span>
+            <span class="cross-vertical"></span>
+        </div>
+        <span>SMART PHC</span>
+    </div>
+
+    <nav>
+        <a href="patient-dashboard.html" class="nav-link"><span>🏠</span> Dashboard</a>
+        <a href="patient-doctors.html" class="nav-link"><span>👨‍⚕️</span> Doctors</a>
+        <a href="patient-services.html" class="nav-link"><span>🏥</span> PHC Services</a>
+        <a href="patient-medicines.html" class="nav-link"><span>💊</span> Medicines</a>
+        <a href="patient-reminders.html" class="nav-link"><span>🔔</span> Reminders</a>
+        <a href="patient-health-records.html" class="nav-link active"><span>📋</span> Health Records</a>
+        <a href="patient-profile.html" class="nav-link"><span>👤</span> My Profile</a>
+    </nav>
+
+    <button class="logout-btn" id="logoutBtn">↪ Logout</button>
+</aside>
+
+<main class="main-content">
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <header class="top-bar">
+        <div>
+            <p class="small-text">Patient Dashboard</p>
+            <h1>My Health Records 📋</h1>
+        </div>
+        <div class="profile">
+            <div class="profile-avatar">👤</div>
+        </div>
+    </header>
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+            <div>
+                <h2>📋 My Medical History</h2>
+                <p>View your medical history and health information.</p>
+            </div>
+        </div>
+
+        <div class="record-grid">
+
+            <div class="record-card">
+                <span>👤</span>
+                <h3>Patient Information</h3>
+                <p>View your personal health profile.</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="record-card">
+                <span>🩺</span>
+                <h3>Consultation History</h3>
+                <p>View your previous doctor consultations.</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="record-card">
+                <span>💊</span>
+                <h3>Prescriptions</h3>
+                <p>View medicines prescribed by your doctor.</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="record-card">
+                <span>💉</span>
+                <h3>Vaccination History</h3>
+                <p>View your vaccination records.</p>
+                <button>View Details</button>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Health Record Popup -->
+<div class="record-modal" id="recordModal">
+    <div class="record-modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <h2 id="modalTitle">Health Record</h2>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script src="patient-dashboard.js"></script>
+</body>
+</html>

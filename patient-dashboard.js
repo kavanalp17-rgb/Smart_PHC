@@ -159,16 +159,19 @@ if (logoutBtn) {
 
 
 // ==========================================
-// 5. SIDEBAR NAVIGATION
+// 5. PAGE-AWARE SIDEBAR NAVIGATION
 // ==========================================
 
 const navLinks = document.querySelectorAll(".nav-link");
 
+const currentPage = window.location.pathname.split("/").pop();
+
 navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        navLinks.forEach(nav => nav.classList.remove("active"));
-        this.classList.add("active");
-    });
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage) {
+        link.classList.toggle("active", linkPage === currentPage);
+    }
 });
 
 
@@ -199,7 +202,6 @@ if (menuToggle && sidebar && sidebarOverlay) {
         });
     });
 }
-
 
 // ==========================================
 // 7. HEALTH RECORDS POPUP
@@ -510,9 +512,33 @@ if (editProfileBtn && editProfileModal && editProfileForm) {
         user.bloodGroup = document.getElementById("editBloodGroup").value;
         user.address = document.getElementById("editAddress").value.trim();
 
-        localStorage.setItem("smartPHCUser", JSON.stringify(user));
+       // Update logged-in patient
+localStorage.setItem("smartPHCUser", JSON.stringify(user));
 
-        savedUser = user;
+// Update the registered patient database using Patient ID
+const patients = getStoredRecords("smartPHCPatients");
+
+const patientIndex = patients.findIndex(patient =>
+    String(patient.patientID || patient.patientId || "").trim() === patientID
+);
+
+if (patientIndex !== -1) {
+    patients[patientIndex] = {
+        ...patients[patientIndex],
+        phone: user.phone,
+        age: user.age,
+        gender: user.gender,
+        bloodGroup: user.bloodGroup,
+        address: user.address
+    };
+
+    localStorage.setItem(
+        "smartPHCPatients",
+        JSON.stringify(patients)
+    );
+}
+
+savedUser = user;
 
         displayPatientProfile();
 

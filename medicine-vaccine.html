@@ -10,7 +10,6 @@
 
 <body>
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="brand">
             <div class="brand-logo">✚</div>
@@ -29,21 +28,18 @@
         </a>
     </aside>
 
-
-    <!-- MAIN CONTENT -->
     <main class="main-content">
 
         <header class="top-bar">
             <div>
                 <p class="small-text">SMART PHC INVENTORY</p>
                 <h1>Medicine & <span>Vaccination</span></h1>
-                <p class="subtitle">Medicine and vaccine availability management</p>
+                <p class="subtitle">Check medicine and vaccine availability.</p>
             </div>
             <div class="profile-avatar">👤</div>
         </header>
 
-
-        <!-- FIRST PAGE: THREE CARDS -->
+        <!-- PATIENT OPTIONS -->
         <section class="main-options" id="homePage">
 
             <button class="option-card" id="medicineBtn">
@@ -58,14 +54,7 @@
                 <p>Check vaccine availability</p>
             </button>
 
-            <button class="option-card" id="updateBtn">
-                <span class="option-icon">📝</span>
-                <h2>Add / Update</h2>
-                <p>Manage inventory details</p>
-            </button>
-
         </section>
-
 
         <!-- MEDICINE PAGE -->
         <section class="content-panel" id="medicinePage" hidden>
@@ -79,7 +68,6 @@
 
         </section>
 
-
         <!-- VACCINE PAGE -->
         <section class="content-panel" id="vaccinePage" hidden>
 
@@ -91,68 +79,6 @@
             <div class="item-grid" id="vaccineList"></div>
 
         </section>
-
-
-        <!-- ADD / UPDATE PAGE -->
-        <section class="content-panel" id="updatePage" hidden>
-
-            <button class="back-button" onclick="showHome()">← Back</button>
-
-            <h2>📝 Add / Update Inventory</h2>
-            <p class="subtitle">Enter the item details and availability status.</p>
-
-            <form id="inventoryForm">
-
-                <label for="itemName">Name</label>
-                <input
-                    type="text"
-                    id="itemName"
-                    placeholder="Enter medicine or vaccine name"
-                    required
-                >
-
-                <label for="itemType">Item Type</label>
-                <select id="itemType" required>
-                    <option value="">Select Item Type</option>
-                    <option value="medicine">Medicine</option>
-                    <option value="vaccine">Vaccine</option>
-                </select>
-
-                <label for="itemStatus">Status</label>
-                <select id="itemStatus" required>
-                    <option value="">Select Status</option>
-                    <option value="available">Available</option>
-                    <option value="unavailable">Not Available</option>
-                </select>
-
-                <button type="submit" class="save-btn">
-                    Add / Update
-                </button>
-
-            </form>
-
-            <p id="message"></p>
-
-            <div class="saved-section">
-                <h2>Inventory Details</h2>
-
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Item Type</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="inventoryTable"></tbody>
-                    </table>
-                </div>
-            </div>
-
-        </section>
-
 
         <footer class="footer">
             © 2026 Smart PHC | Medicine & Vaccination Management

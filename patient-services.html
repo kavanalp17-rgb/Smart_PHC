@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PHC - PHC Services</title>
+    <link rel="stylesheet" href="patient-dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="brand">
+        <div class="brand-logo">
+            <span class="cross-horizontal"></span>
+            <span class="cross-vertical"></span>
+        </div>
+        <span>SMART PHC</span>
+    </div>
+
+    <nav>
+        <a href="patient-dashboard.html" class="nav-link"><span>🏠</span> Dashboard</a>
+        <a href="patient-doctors.html" class="nav-link"><span>👨‍⚕️</span> Doctors</a>
+        <a href="patient-services.html" class="nav-link active"><span>🏥</span> PHC Services</a>
+        <a href="patient-medicines.html" class="nav-link"><span>💊</span> Medicines</a>
+        <a href="patient-reminders.html" class="nav-link"><span>🔔</span> Reminders</a>
+        <a href="patient-health-records.html" class="nav-link"><span>📋</span> Health Records</a>
+        <a href="patient-profile.html" class="nav-link"><span>👤</span> My Profile</a>
+    </nav>
+
+    <button class="logout-btn" id="logoutBtn">↪ Logout</button>
+</aside>
+
+<main class="main-content">
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <header class="top-bar">
+        <div>
+            <p class="small-text">Patient Dashboard</p>
+            <h1>PHC Services 🏥</h1>
+        </div>
+        <div class="profile">
+            <div class="profile-avatar">👤</div>
+        </div>
+    </header>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <p class="section-label">PHC INFORMATION</p>
+                <h2>Available Healthcare Services</h2>
+            </div>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>General Consultation</h3>
+                <p>Available</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💉</div>
+                <h3>Vaccination</h3>
+                <p>Available</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧪</div>
+                <h3>Laboratory</h3>
+                <p>Available</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Pharmacy</h3>
+                <p>Limited Stock</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤰</div>
+                <h3>Maternal Care</h3>
+                <p>Available</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚑</div>
+                <h3>Emergency Support</h3>
+                <p>Available 24/7</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="patient-dashboard.js"></script>
+</body>
+</html>
