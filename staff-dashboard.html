@@ -40,31 +40,11 @@
                 <span>👨‍⚕️</span> Doctor Management
             </a>
 
-            <!-- PATIENT MANAGEMENT PARENT MENU -->
             <a href="#patient-management"
                class="nav-link"
-               id="patientManagementToggle"
-               aria-expanded="false">
+               id="patientManagementToggle">
                 <span>👥</span> Patient Management
-                <span class="arrow">⌄</span>
             </a>
-
-            <!-- PATIENT MANAGEMENT SUBMENU -->
-            <div class="submenu" id="patientManagementSubmenu">
-
-                <a href="#health-records" class="nav-link">
-                    <span>🩺</span> Health Records
-                </a>
-
-                <a href="#prescriptions" class="nav-link">
-                    <span>💊</span> Prescriptions
-                </a>
-
-                <a href="#vaccination-records" class="nav-link">
-                    <span>💉</span> Vaccination Records
-                </a>
-
-            </div>
 
             <a href="medicine-stock/medicine-stock.html"
                class="nav-link">
@@ -81,6 +61,7 @@
         </div>
 
     </aside>
+
 
     <!-- MAIN CONTENT -->
     <main class="main-content" id="dashboard">
@@ -103,7 +84,8 @@
 
         </header>
 
-        <!-- WELCOME -->
+
+        <!-- WELCOME SECTION -->
         <section class="welcome-section">
 
             <div>
@@ -121,6 +103,7 @@
             <div class="welcome-icon">🏥</div>
 
         </section>
+
 
         <!-- DASHBOARD OVERVIEW -->
         <section class="dashboard-section">
@@ -173,13 +156,16 @@
             </div>
         </section>
 
+
         <!-- MANAGEMENT MODULES -->
         <section class="dashboard-section">
 
             <div class="section-heading">
                 <div>
                     <h2>PHC Management</h2>
-                    <p>Select a module to manage its information and activities.</p>
+                    <p>
+                        Select a module to manage its information and activities.
+                    </p>
                 </div>
             </div>
 
@@ -187,38 +173,130 @@
 
                 <a href="doctor-management/doctor-management.html"
                    class="module-card">
+
                     <div class="module-icon doctor-icon">👨‍⚕️</div>
                     <h3>Doctor Management</h3>
-                    <p>Manage doctor profiles, specializations and availability.</p>
+                    <p>
+                        Manage doctor profiles, specializations and availability.
+                    </p>
                     <div class="module-link">Open Module →</div>
+
                 </a>
+
 
                 <a href="#patient-management"
                    class="module-card">
+
                     <div class="module-icon patient-icon">👥</div>
                     <h3>Patient Management</h3>
-                    <p>Manage patient health records, prescriptions and vaccinations.</p>
+                    <p>
+                        Manage patient health records, prescriptions and vaccinations.
+                    </p>
                     <div class="module-link">Open Module →</div>
+
                 </a>
+
 
                 <a href="medicine-stock/medicine-stock.html"
                    class="module-card">
+
                     <div class="module-icon medicine-icon">💊</div>
                     <h3>Medicine Stocks</h3>
-                    <p>Monitor medicine quantities and stock availability.</p>
+                    <p>
+                        Monitor medicine quantities and stock availability.
+                    </p>
                     <div class="module-link">Open Module →</div>
+
                 </a>
 
             </div>
         </section>
 
-        <!-- PATIENT MANAGEMENT -->
+
+        <!-- PATIENT MANAGEMENT PAGE -->
         <div id="patient-management">
 
-            <!-- HEALTH RECORDS -->
+            <section id="patient-management-home"
+                     class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Patient Management</h2>
+                        <p>
+                            Select a module to manage patient information.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="module-grid patient-module-grid">
+
+                    <!-- HEALTH RECORDS CARD -->
+                    <a href="#health-records"
+                       class="module-card patient-module-card"
+                       data-patient-page="health-records">
+
+                        <div class="module-icon doctor-icon">🩺</div>
+
+                        <h3>Health Records</h3>
+
+                        <p>
+                            View and manage registered patients' medical history.
+                        </p>
+
+                        <div class="module-link">Open Module →</div>
+
+                    </a>
+
+
+                    <!-- PRESCRIPTIONS CARD -->
+                    <a href="#prescriptions"
+                       class="module-card patient-module-card"
+                       data-patient-page="prescriptions">
+
+                        <div class="module-icon medicine-icon">💊</div>
+
+                        <h3>Prescriptions</h3>
+
+                        <p>
+                            View and manage prescriptions authorized by doctors.
+                        </p>
+
+                        <div class="module-link">Open Module →</div>
+
+                    </a>
+
+
+                    <!-- VACCINATION RECORDS CARD -->
+                    <a href="#vaccination-records"
+                       class="module-card patient-module-card"
+                       data-patient-page="vaccination-records">
+
+                        <div class="module-icon vaccine-icon">💉</div>
+
+                        <h3>Vaccination Records</h3>
+
+                        <p>
+                            Manage patient vaccination history and upcoming schedules.
+                        </p>
+
+                        <div class="module-link">Open Module →</div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- HEALTH RECORDS MODULE -->
             <section class="dashboard-section patient-module"
                      id="health-records"
                      data-module="health">
+
+                <button type="button" class="patient-back-button">
+                    ← Back to Patient Management
+                </button>
 
                 <div class="section-heading">
                     <div>
@@ -228,6 +306,7 @@
                 </div>
 
                 <div class="patient-tools">
+
                     <input type="search"
                            class="patient-search"
                            placeholder="Search patient by ID or name...">
@@ -235,6 +314,7 @@
                     <select class="patient-select">
                         <option value="">Select a registered patient</option>
                     </select>
+
                 </div>
 
                 <div class="patient-list"></div>
@@ -247,10 +327,15 @@
 
             </section>
 
-            <!-- PRESCRIPTIONS -->
+
+            <!-- PRESCRIPTIONS MODULE -->
             <section class="dashboard-section patient-module"
                      id="prescriptions"
                      data-module="prescription">
+
+                <button type="button" class="patient-back-button">
+                    ← Back to Patient Management
+                </button>
 
                 <div class="section-heading">
                     <div>
@@ -263,6 +348,7 @@
                 </div>
 
                 <div class="patient-tools">
+
                     <input type="search"
                            class="patient-search"
                            placeholder="Search patient by ID or name...">
@@ -270,6 +356,7 @@
                     <select class="patient-select">
                         <option value="">Select a registered patient</option>
                     </select>
+
                 </div>
 
                 <div class="patient-list"></div>
@@ -282,19 +369,27 @@
 
             </section>
 
-            <!-- VACCINATION RECORDS -->
+
+            <!-- VACCINATION RECORDS MODULE -->
             <section class="dashboard-section patient-module"
                      id="vaccination-records"
                      data-module="vaccination">
 
+                <button type="button" class="patient-back-button">
+                    ← Back to Patient Management
+                </button>
+
                 <div class="section-heading">
                     <div>
                         <h2>💉 Vaccination Records</h2>
-                        <p>Manage vaccination history and upcoming schedules.</p>
+                        <p>
+                            Manage vaccination history and upcoming schedules.
+                        </p>
                     </div>
                 </div>
 
                 <div class="patient-tools">
+
                     <input type="search"
                            class="patient-search"
                            placeholder="Search patient by ID or name...">
@@ -302,6 +397,7 @@
                     <select class="patient-select">
                         <option value="">Select a registered patient</option>
                     </select>
+
                 </div>
 
                 <div class="patient-list"></div>
@@ -316,6 +412,7 @@
 
         </div>
 
+
         <!-- RECENT ACTIVITY -->
         <section class="dashboard-section">
 
@@ -329,17 +426,23 @@
             <div class="activity-card">
                 <div class="empty-icon">📌</div>
                 <h3>No Recent Activities</h3>
-                <p>Activities will appear here when module functionality is connected.</p>
+                <p>
+                    Activities will appear here when module functionality is connected.
+                </p>
             </div>
 
         </section>
 
+
         <!-- FOOTER -->
         <footer class="dashboard-footer">
-            <p>© 2026 SMART PHC | Primary Health Centre Management System</p>
+            <p>
+                © 2026 SMART PHC | Primary Health Centre Management System
+            </p>
         </footer>
 
     </main>
+
 </div>
 
 <script src="staff-dashboard.js"></script>

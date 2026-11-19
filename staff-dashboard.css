@@ -1,3 +1,4 @@
+
 /* =========================
    GLOBAL STYLES
 ========================= */
@@ -29,22 +30,18 @@ body {
     content: "";
     position: fixed;
     inset: -8px;
-
     background-image:
         linear-gradient(
             rgba(3, 20, 30, 0.72),
             rgba(0, 50, 60, 0.75)
         ),
         url("../images/smart-phc-bg.png");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     filter: blur(3px);
     z-index: 0;
 }
-
 
 /* =========================
    SIDEBAR
@@ -54,52 +51,35 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 265px;
     height: 100vh;
-
     padding: 25px 18px;
-
     background: rgba(5, 30, 40, 0.88);
-
     border-right: 1px solid rgba(255,255,255,0.15);
-
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
     z-index: 10;
-
     display: flex;
     flex-direction: column;
 }
 
-
-/* Brand */
-
 .brand {
     text-align: center;
     padding-bottom: 30px;
-
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .logo-circle {
     width: 62px;
     height: 62px;
-
     border: 2px solid white;
     border-radius: 50%;
-
     margin: 0 auto 12px;
-
     position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: rgba(255,255,255,0.08);
-
     box-shadow:
         0 0 18px rgba(255,255,255,0.4),
         0 0 30px rgba(60,210,240,0.4);
@@ -137,15 +117,14 @@ body {
     color: rgba(255,255,255,0.65);
 }
 
-
-/* Navigation */
+/* =========================
+   NAVIGATION
+========================= */
 
 .sidebar-heading {
     margin: 28px 10px 15px;
-
     font-size: 11px;
     letter-spacing: 2px;
-
     color: #8eeaff;
 }
 
@@ -159,17 +138,13 @@ body {
     display: flex;
     align-items: center;
     gap: 13px;
-
     padding: 14px 13px;
-
     color: rgba(255,255,255,0.78);
     text-decoration: none;
-
     font-size: 14px;
-
     border-radius: 11px;
-
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .nav-link span {
@@ -183,11 +158,8 @@ body {
         rgba(76,201,232,0.28),
         rgba(22,137,168,0.25)
     );
-
     color: #8eeaff;
-
     border: 1px solid rgba(142,234,255,0.25);
-
     box-shadow: 0 0 15px rgba(60,210,240,0.10);
 }
 
@@ -200,7 +172,6 @@ body {
     background: rgba(255,80,80,0.12);
 }
 
-
 /* =========================
    MAIN CONTENT
 ========================= */
@@ -208,15 +179,11 @@ body {
 .main-content {
     position: relative;
     z-index: 1;
-
     width: calc(100% - 265px);
     min-height: 100vh;
-
     margin-left: 265px;
-
     padding: 30px 35px;
 }
-
 
 /* =========================
    TOP BAR
@@ -226,7 +193,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -245,28 +211,20 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-
     padding: 10px 15px;
-
     background: rgba(8,35,45,0.65);
     border: 1px solid rgba(255,255,255,0.18);
-
     border-radius: 14px;
-
     backdrop-filter: blur(15px);
 }
 
 .profile-avatar {
     width: 42px;
     height: 42px;
-
     border-radius: 50%;
-
     display: grid;
     place-items: center;
-
     background: rgba(76,201,232,0.2);
-
     font-size: 22px;
 }
 
@@ -280,7 +238,6 @@ body {
     color: rgba(255,255,255,0.65);
 }
 
-
 /* =========================
    WELCOME SECTION
 ========================= */
@@ -289,21 +246,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 30px 32px;
-
     margin-bottom: 32px;
-
     background: rgba(8,35,45,0.72);
-
     border: 1px solid rgba(142,234,255,0.3);
-
     border-radius: 20px;
-
     backdrop-filter: blur(18px);
-
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-
     animation: cardAppear 0.8s ease;
 }
 
@@ -311,7 +260,6 @@ body {
     color: #8eeaff;
     font-size: 11px;
     letter-spacing: 2px;
-
     margin-bottom: 12px;
 }
 
@@ -329,7 +277,6 @@ body {
 .date-text {
     display: inline-block;
     margin-top: 16px;
-
     color: #8eeaff;
     font-size: 13px;
 }
@@ -338,7 +285,6 @@ body {
     font-size: 65px;
     padding: 15px;
 }
-
 
 /* =========================
    SECTION HEADING
@@ -352,7 +298,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     margin-bottom: 20px;
 }
 
@@ -365,7 +310,6 @@ body {
     font-size: 13px;
     color: rgba(255,255,255,0.65);
 }
-
 
 /* =========================
    STATISTICS CARDS
@@ -381,39 +325,27 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-
     padding: 21px 17px;
-
     background: rgba(8,35,45,0.76);
-
     border: 1px solid rgba(255,255,255,0.16);
-
     border-radius: 16px;
-
     backdrop-filter: blur(16px);
-
     transition: 0.3s;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
-
     border-color: rgba(142,234,255,0.5);
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .stat-icon {
     min-width: 48px;
     height: 48px;
-
     display: grid;
     place-items: center;
-
     border-radius: 13px;
-
     background: rgba(76,201,232,0.17);
-
     font-size: 24px;
 }
 
@@ -433,7 +365,6 @@ body {
     color: rgba(255,255,255,0.55);
 }
 
-
 /* =========================
    MODULE CARDS
 ========================= */
@@ -446,30 +377,20 @@ body {
 
 .module-card {
     display: block;
-
     padding: 25px;
-
     background: rgba(8,35,45,0.76);
-
     border: 1px solid rgba(255,255,255,0.17);
-
     border-radius: 18px;
-
     backdrop-filter: blur(18px);
-
     text-decoration: none;
     color: white;
-
     transition: 0.35s;
-
     animation: cardAppear 0.8s ease;
 }
 
 .module-card:hover {
     transform: translateY(-6px);
-
     border-color: #8eeaff;
-
     box-shadow:
         0 12px 30px rgba(0,0,0,0.3),
         0 0 20px rgba(60,210,240,0.12);
@@ -478,14 +399,10 @@ body {
 .module-icon {
     width: 55px;
     height: 55px;
-
     display: grid;
     place-items: center;
-
     font-size: 27px;
-
     border-radius: 15px;
-
     margin-bottom: 19px;
 }
 
@@ -513,9 +430,7 @@ body {
 .module-card p {
     font-size: 13px;
     line-height: 1.7;
-
     color: rgba(255,255,255,0.67);
-
     min-height: 45px;
 }
 
@@ -523,12 +438,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-top: 20px;
     padding-top: 14px;
-
     border-top: 1px solid rgba(255,255,255,0.13);
-
     color: #8eeaff;
     font-size: 13px;
     font-weight: 600;
@@ -543,22 +455,16 @@ body {
     transform: translateX(5px);
 }
 
-
 /* =========================
    RECENT ACTIVITY
 ========================= */
 
 .activity-card {
     text-align: center;
-
     padding: 40px 20px;
-
     background: rgba(8,35,45,0.72);
-
     border: 1px solid rgba(255,255,255,0.16);
-
     border-radius: 17px;
-
     backdrop-filter: blur(16px);
 }
 
@@ -578,7 +484,6 @@ body {
     line-height: 1.6;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -586,15 +491,11 @@ body {
 .dashboard-footer {
     padding: 20px 0;
     margin-top: 20px;
-
     text-align: center;
-
     border-top: 1px solid rgba(255,255,255,0.13);
-
     color: rgba(255,255,255,0.55);
     font-size: 11px;
 }
-
 
 /* =========================
    MOBILE MENU
@@ -602,22 +503,15 @@ body {
 
 .menu-toggle {
     display: none;
-
     position: fixed;
     top: 15px;
     left: 15px;
-
     z-index: 20;
-
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 9px;
-
     background: rgba(8,35,45,0.9);
-
     color: white;
-
     padding: 9px 12px;
-
     font-size: 22px;
     cursor: pointer;
 }
@@ -625,7 +519,6 @@ body {
 .sidebar-overlay {
     display: none;
 }
-
 
 /* =========================
    ANIMATION
@@ -636,13 +529,11 @@ body {
         opacity: 0;
         transform: translateY(25px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 
 /* =========================
    TABLET
@@ -658,7 +549,6 @@ body {
         padding: 25px;
     }
 }
-
 
 /* =========================
    MOBILE
@@ -677,12 +567,9 @@ body {
 
     .sidebar-overlay.active {
         display: block;
-
         position: fixed;
         inset: 0;
-
         background: rgba(0,0,0,0.55);
-
         z-index: 8;
     }
 
@@ -693,7 +580,6 @@ body {
     .main-content {
         width: 100%;
         margin-left: 0;
-
         padding: 85px 18px 25px;
     }
 
@@ -718,7 +604,6 @@ body {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* =========================
    SMALL DEVICES
@@ -748,79 +633,114 @@ body {
     }
 }
 
-/* =================================
-   PATIENT MANAGEMENT SUBMENU
-================================= */
+/* ==========================================
+   PATIENT MANAGEMENT SEPARATE PAGE
+========================================== */
 
-.submenu {
+/* Hide patient page initially */
+
+#patient-management {
     display: none;
-    padding-left: 18px;
-    margin: 4px 0 8px;
 }
 
-.submenu.show {
+/* Show patient page when selected */
+
+.dashboard-page.patient-page-active #patient-management {
     display: block;
 }
 
-.submenu .nav-link {
-    font-size: 14px;
-    padding: 11px 12px;
-    margin-bottom: 4px;
-    border-radius: 8px;
+/* Hide dashboard sections when patient page opens */
+
+.dashboard-page.patient-page-active .top-bar,
+.dashboard-page.patient-page-active .welcome-section,
+.dashboard-page.patient-page-active .main-content > .dashboard-section,
+.dashboard-page.patient-page-active .dashboard-footer {
+    display: none;
 }
 
-.submenu .nav-link:hover {
-    background: rgba(255,255,255,0.10);
+/* Patient management home */
+
+#patient-management-home {
+    display: block;
 }
 
-.nav-link .arrow {
-    margin-left: auto;
-    transition: transform 0.3s ease;
+/* Patient module cards */
+
+.patient-module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.nav-link.expanded .arrow {
-    transform: rotate(180deg);
-}
-
-/* Patient Management parent */
-#patientManagementToggle {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Patient management sections */
-#patient-management {
-    scroll-margin-top: 25px;
-}
-
-.patient-module {
-    scroll-margin-top: 25px;
-}
-
-/* Patient Management module card */
-.patient-module .section-heading {
-    margin-bottom: 20px;
-}
-
-/* Mobile adjustments */
-@media(max-width: 768px) {
-    .submenu {
-        padding-left: 12px;
-    }
-}
-/* Show only the selected patient section */
+/* Hide individual patient sections initially */
 
 .patient-module {
     display: none;
+    scroll-margin-top: 25px;
 }
+
+/* Show only selected patient section */
 
 .patient-module.active {
     display: block;
 }
 
+/* Patient tools */
+
+.patient-tools {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.patient-tools input,
+.patient-tools select {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(142,234,255,0.3);
+    background: #092b35;
+    color: white;
+}
+
+.patient-list {
+    margin: 12px 0;
+    color: #8eeaff;
+    font-size: 13px;
+}
+
+.records-area {
+    margin-top: 20px;
+}
+
+.module-hint {
+    color: rgba(255,255,255,0.65);
+}
+
+/* =========================
+   PATIENT BACK BUTTON
+========================= */
+
+.patient-back-button {
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(142,234,255,0.35);
+    border-radius: 9px;
+    background: rgba(76,201,232,0.15);
+    color: #8eeaff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.patient-back-button:hover {
+    background: rgba(76,201,232,0.28);
+}
+
 /* ==========================================
-   HEALTH RECORDS MANAGEMENT DESIGN
+   HEALTH RECORDS DESIGN
 ========================================== */
 
 .health-add-button,
@@ -910,7 +830,28 @@ body {
     align-self: end;
 }
 
-@media(max-width: 700px) {
+/* =========================
+   RESPONSIVE PATIENT PAGE
+========================= */
+
+@media (max-width: 768px) {
+
+    .patient-module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-tools {
+        flex-direction: column;
+    }
+
+    .patient-tools input,
+    .patient-tools select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+
     .health-form-container form {
         grid-template-columns: 1fr;
     }
